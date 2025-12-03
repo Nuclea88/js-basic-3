@@ -176,25 +176,59 @@ let ej = [3,2,1,4,5]
 let ej2= [7,8,9,10]
 console.log(filterArray(ej, 3));
 //7. Escribe una función que tome un array de números como argumento y devuelva el número mínimo dentro del array.
-
+function minNumberArray(array){
+    return Math.min(... array);
+}
+let ej4= [7,8,8,9,10,8]
+console.log(minNumberArray(ej4));
 //8. Escribe una función que tome un array y un elemento como argumentos, y devuelva la cantidad de veces que el elemento aparece en el array.
-
+function countElement (array, element){
+    let count = 0;
+    for (a of array){
+        if(a ===element){
+            count++;}
+        }
+    return count;
+}
+console.log(countElement(ej4,8));
 //9. Escribe una función que tome un array como argumento y devuelva un nuevo array sin elementos duplicados.
-
+function noDuplicate (array){
+    let newArray = new Set(array);
+    return newArray;
+}
+console.log(noDuplicate(ej4));
 //10. Escribe una función que tome un array como argumento y devuelva un nuevo array con los elementos en orden inverso.
+function reverseArray(array){
 
+    return array.toReversed();
+}
+console.log(reverseArray(ej4));
 //## Objetos literales:
 
 //1. Escribe una función que tome un objeto literal con una propiedad "nombre" y devuelva el valor de esa propiedad.
-
+function getName(obj){
+    return obj.nombre;
+}
 //2. Escribe una función que tome un objeto literal con una propiedad "edad" y un número como argumentos, y actualice el valor de la propiedad "edad" con el número dado.
-
+function updateAge(obj, newAge){
+    obj.edad = newAge;
+    return obj;
+}
 //3. Escribe una función que tome un objeto literal y una cadena de texto como argumentos, y agregue una nueva propiedad al objeto con la cadena de texto como nombre y un valor inicial de null.
+function addProperty (obj, text){
+    obj[text] = null;
+    return obj;
+}
 
 //4. Escribe una función que tome un objeto literal y una cadena de texto como argumentos, y elimine la propiedad del objeto con el nombre dado.
-
+function deleteProperty(obj, text){
+    delete obj[text];
+    return obj;
+}
 //5. Escribe una función que tome un objeto literal como argumento y devuelva la cantidad de propiedades que tiene.
-
+function countProperties(obj){
+    return Object.keys(obj).length;
+}
 //6. Escribe una función que tome un objeto literal y una cadena de texto como argumentos, y devuelva true si el objeto tiene una propiedad con ese nombre, o false si no la tiene.
 
 //7. Escribe una función que tome un objeto literal como argumento y devuelva un array con todos los valores de sus propiedades.
